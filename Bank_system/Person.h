@@ -1,6 +1,11 @@
+#pragma once
+#include <iostream>
+#include "Validation.h"
+using namespace std;
+
 class Person
 {
-private:
+protected:
     int id;
     string name, password;
 public:
