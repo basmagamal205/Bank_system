@@ -1,19 +1,25 @@
 #include <iostream>
 #include<string>
+#include <vector>
 #include <cctype>
 #include "Validation.h"
 #include "Person.h"
+#include "Client.h"
 using namespace std;
 
 #pragma once
 class Employee :public Person
-{protected:
+{
+private:
+	vector<Client> Clients;
+protected:
+
 	double salary;
 public:
-	Employee():Person() {
+	Employee() :Person() {
 		this->salary = 0;
 	}
-	Employee(int id, string name, string password, double salary):Person(id,name,password) {
+	Employee(int id, string name, string password, double salary) :Person(id, name, password) {
 		setSalary(salary);
 
 	}
@@ -27,17 +33,49 @@ public:
 	double getSalary() {
 		return salary;
 	}
+
+	//Methods
 	void display() {
-		cout << "ID: " << id << endl;
-		cout << "===================" << endl;
-		cout << "Name: " << name << endl;
-		cout << "===================" << endl;
-		cout << "Passowrd: " << password << endl;
-		cout << "===================" << endl;
-		cout << "Salary: " << salary << endl;
-		cout << "===================" << endl;
+		cout << "ID: " << id << "  " << "Name: " << name << "  " << "Passowrd: " << password << "Salary: " << salary << "  ";
+
 	}
 
+
+	void addClient(Client& client) {
+		Clients.push_back(client);
+	}
+
+
+
+	Client searchClient(int id) {
+		for (auto& client : Clients) {
+			if (client.getID() == id) {
+				return client;
+			}
+		}
+		cout << "Client not found.\n";
+		return Client();
+	}
+
+
+
+	void listClients() {
+		for (auto& client : Clients) {
+			client.display();
+		}
+	}
+
+	void editClient(int id, string name, string password, double balance) {
+		for (auto& client : Clients) {
+			if (client.getID() == id) {
+				client.setName(name);
+				client.setPassword(password);
+				client.setBalance(balance);
+	
+			}
+		}
+		return;
+	}
 };
 
 
