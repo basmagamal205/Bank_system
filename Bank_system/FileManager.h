@@ -1,0 +1,103 @@
+#include "Person.h"
+#include "Client.h"
+//#include"Helper.h"
+#include "Admin.h"
+#include <fstream>
+#include "DataSourceInterface.h"
+using namespace std;
+#pragma once
+class FileManager :public DataSourceInterface
+{
+public:
+
+	void addClient(Client c) {
+		fstream clientsData;
+		clientsData.open("Clients.txt", ios::app);
+		if (clientsData.is_open()) {
+			clientsData << c.getName() << '*' << c.getID() << '*' << c.getPassword() << '*' << c.getBalance() << '*';
+			clientsData << "\n";
+			clientsData.close();
+		}
+	}
+	void addEmployee(Employee e) {
+		fstream employeesData;
+		employeesData.open("Employee.txt", ios::app);
+		if (employeesData.is_open()) {
+			employeesData << e.getName() << '*' << e.getID() << '*' << e.getPassword() << '*' << e.getSalary() << '*';
+			employeesData << "\n";
+			employeesData.close();
+		}
+	}
+	void addAdmin(Admin a) {
+		fstream adminsData;
+		adminsData.open("Admin.txt", ios::app);
+		if (adminsData.is_open()) {
+			adminsData << a.getName() << '*' << a.getID() << '*' << a.getPassword() << '*' << a.getSalary() << '*';
+			adminsData << "\n";
+			adminsData.close();
+		}
+	}
+	vector<Client> getAllClients() {
+		vector<Client> clientsDataVector;
+		string data;
+		fstream clientsData;
+		clientsData.open("Clients.txt", ios::in);
+		if (clientsData.is_open()) {
+			while (getline(clientsData, data)) {
+				clientsDataVector.push_back(Parser::parseToClient(data));
+			}
+			clientsData.close();
+		}
+		return clientsDataVector;
+	}
+	vector<Employee> getAllEmployees() {
+		vector<Employee> employeesDataVector;
+		string data;
+		fstream employeesData;
+		employeesData.open("Employee.txt", ios::in);
+		if (employeesData.is_open()) {
+			while (getline(employeesData, data)) {
+				{
+					employeesDataVector.push_back(Parser::parseToEmployee(data));
+				}
+				employeesData.close();
+			}
+			return employeesDataVector;
+		}
+		
+	}
+	vector<Admin> getAllAdmins() {
+		vector<Admin> adminsDataVector;
+		string data;
+		fstream adminsData;
+		adminsData.open("Admin.txt", ios::in);
+		if (adminsData.is_open()) {
+			while (getline(adminsData, data)) {
+				adminsDataVector.push_back(Parser::parseToAdmin(data));
+			}
+			adminsData.close();
+		}
+		return adminsDataVector;
+	}
+
+	void removeAllClients() {
+		fstream clientsData;
+		clientsData.open("Clients.txt", ios::out);
+		clientsData.clear();
+		clientsData.close();
+	}
+	void removeAllEmployees() {
+		fstream employeesData;
+		employeesData.open("Employees.txt", ios::out);
+		employeesData.clear();
+		employeesData.close();
+	}
+	void removeAllAdimns() {
+		fstream adminsData;
+		adminsData.open("Admins.txt", ios::out);
+		adminsData.clear();
+		adminsData.close();
+	}
+
+
+};
