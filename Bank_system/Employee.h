@@ -11,9 +11,9 @@ using namespace std;
 class Employee :public Person
 {
 private:
-	vector<Client> Clients;
+	
 protected:
-
+	vector<Client> Clients;
 	double salary;
 public:
 	Employee() :Person() {
@@ -36,7 +36,7 @@ public:
 
 	//Methods
 	void display() {
-		cout << "ID: " << id << "  " << "Name: " << name << "  " << "Passowrd: " << password << "Salary: " << salary << "  ";
+		cout << "ID: " << id << "  " << "Name: " << name << "  " << "Passowrd: " << password << "Salary: " << salary << "  " << endl;
 
 	}
 
@@ -53,7 +53,6 @@ public:
 				return client;
 			}
 		}
-		cout << "Client not found.\n";
 		return Client();
 	}
 
