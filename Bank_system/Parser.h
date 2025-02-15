@@ -1,101 +1,51 @@
-#include <iostream>
-#include<string>
-#include <cctype>
-#include "Validation.h"
-#include "Person.h"
-#include "Client.h"
+#include<sstream>
 #include<vector>
 #include "Admin.h"
-#include <fstream>
 using namespace std;
 #pragma once
 class Parser
 {
-public:
+private:
 	static vector<string> split(string line) {
-		vector<string> vec;
-		vec.push_back(line);
-		return vec;
+		stringstream str(line);
+		string token;
+		vector<string> info;
+		while (getline(str, token, '&'))
+		{
+			info.push_back(token);
+		}
+
+		return info;
 	}
 	//=================================================
+public:
 	static Client parseToClient(string line) {
+		vector<string> info = split(line);
 		Client c;
-		int count{};
-		while (count <= 3) {
-			if (count == 0) {
-				c.setName(line.substr(0, line.find('*', 0)));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else if (count == 1) {
-				c.setID(stoi(line.substr(0, line.find('*', 0))));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else if (count == 2) {
-				c.setPassword(line.substr(0, line.find('*', 0)));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else {
-				c.setBalance(stod(line.substr(0, line.find('*', 0))));
-				count++;
-			}
-		}
+		c.setID(stoi(info[0]));
+		c.setName(info[1]);
+		c.setPassword(info[2]);
+		c.setBalance(stod(info[3]));
 		return c;
 	}
 	//================================================
 	static Employee parseToEmployee(string line) {
+		vector<string> info = split(line);
 		Employee e;
-		int count{};
-		while (count <= 3) {
-			if (count == 0) {
-				e.setName(line.substr(0, line.find('*', 0)));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else if (count == 1) {
-				e.setID(stoi(line.substr(0, line.find('*', 0))));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else if (count == 2) {
-				e.setPassword(line.substr(0, line.find('*', 0)));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else {
-				e.setSalary(stod(line.substr(0, line.find('*', 0))));
-				count++;
-			}
-		}
+		e.setID(stoi(info[0]));
+		e.setName(info[1]);
+		e.setPassword(info[2]);
+		e.setSalary(stod(info[3]));
 		return e;
 	}
 	//==============================================
 	static Admin parseToAdmin(string line) {
+		vector<string> info = split(line);
 		Admin a;
-		int count{};
-		while (count <= 3) {
-			if (count == 0) {
-				a.setName(line.substr(0, line.find('*', 0)));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else if (count == 1) {
-				a.setID(stoi(line.substr(0, line.find('*', 0))));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else if (count == 2) {
-				a.setPassword(line.substr(0, line.find('*', 0)));
-				line.erase(0, line.find('*', 0) + 1);
-				count++;
-			}
-			else {
-				a.setSalary(stod(line.substr(0, line.find('*', 0))));
-			}
-		}
+		a.setID(stoi(info[0]));
+		a.setName(info[1]);
+		a.setPassword(info[2]);
+		a.setSalary(stod(info[3]));
+		return a;
 	}
 };
-
-

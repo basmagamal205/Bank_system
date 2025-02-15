@@ -1,6 +1,5 @@
 #include "Person.h"
 #include "Client.h"
-//#include"Helper.h"
 #include "Admin.h"
 #include <fstream>
 #include "DataSourceInterface.h"
@@ -14,7 +13,7 @@ public:
 		fstream clientsData;
 		clientsData.open("Clients.txt", ios::app);
 		if (clientsData.is_open()) {
-			clientsData << c.getName() << '*' << c.getID() << '*' << c.getPassword() << '*' << c.getBalance() << '*';
+			clientsData << c.getName() << '*' << c.getId() << '*' << c.getPassword() << '*' << c.getBalance() << '*';
 			clientsData << "\n";
 			clientsData.close();
 		}
@@ -23,7 +22,7 @@ public:
 		fstream employeesData;
 		employeesData.open("Employee.txt", ios::app);
 		if (employeesData.is_open()) {
-			employeesData << e.getName() << '*' << e.getID() << '*' << e.getPassword() << '*' << e.getSalary() << '*';
+			employeesData << e.getName() << '*' << e.getId() << '*' << e.getPassword() << '*' << e.getSalary() << '*';
 			employeesData << "\n";
 			employeesData.close();
 		}
@@ -32,7 +31,7 @@ public:
 		fstream adminsData;
 		adminsData.open("Admin.txt", ios::app);
 		if (adminsData.is_open()) {
-			adminsData << a.getName() << '*' << a.getID() << '*' << a.getPassword() << '*' << a.getSalary() << '*';
+			adminsData << a.getName() << '*' << a.getId() << '*' << a.getPassword() << '*' << a.getSalary() << '*';
 			adminsData << "\n";
 			adminsData.close();
 		}
@@ -78,6 +77,41 @@ public:
 			adminsData.close();
 		}
 		return adminsDataVector;
+	}
+
+	static void updateClients() {
+		ofstream clientsData("Clients.txt", ios::out); // Open in write mode (overwrite file)
+
+		if (!clientsData.is_open()) {
+			return;
+		}
+
+		for (auto& client : allClients) {
+			clientsData << client.getId() << '&'
+				<< client.getName() << '&'
+				<< client.getPassword() << '&'
+				<< client.getBalance() << "\n";
+		}
+
+		clientsData.close();
+		cout << " Clients updated successfully.\n";
+	}
+	static void updateEmployees() {
+		ofstream Employeesdata("Clients.txt", ios::out); // Open in write mode (overwrite file)
+
+		if (!Employeesdata.is_open()) {
+			return;
+		}
+
+		for (auto& Employee : allEmployees) {
+			Employeesdata << Employee.getId() << '&'
+				<< Employee.getName() << '&'
+				<< Employee.getPassword() << '&'
+				<< Employee.getSalary() << "\n";
+		}
+
+		Employeesdata.close();
+		cout << " Clients updated successfully.\n";
 	}
 
 	void removeAllClients() {
