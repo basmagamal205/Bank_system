@@ -1,0 +1,78 @@
+﻿  Manger.cpp
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7): error C2011: 'Helper': 'class' type redefinition
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(10,11): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(10,11): error C3861: 'saveClient': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(14,11): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(14,11): error C3861: 'saveEmployee': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(18,11): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(18,11): error C3861: 'saveEmployee': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(23,11): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(23,11): error C3861: 'getClients': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(26,11): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(26,11): error C3861: 'getEmployees': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(29,12): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(29,12): error C3861: 'getAdmins': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(33,12): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(33,12): error C3861: 'clearFile': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(36,12): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(36,12): error C3861: 'clearFile': identifier not found
+  (compiling source file 'Manger.cpp')
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(39,12): error C2027: use of undefined type 'Helper'
+  (compiling source file 'Manger.cpp')
+      C:\Users\Tweety\source\repos\bank system 2\bank system 2\Helper.h(9,7):
+      see declaration of 'Helper'
+  
+C:\Users\Tweety\source\repos\bank system 2\bank system 2\Manger.h(39,12): error C3861: 'clearFile': identifier not found
+  (compiling source file 'Manger.cpp')
+  
